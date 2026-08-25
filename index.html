@@ -299,7 +299,7 @@
         <div style="flex:1;min-width:200px">
           <div style="font-weight:700;font-size:15px;color:#2f2a25;margin-bottom:4px" id="agnesIntroTitle">关于 Agnes 🦄 — 家里的育儿小助手</div>
           <div style="font-size:13.5px;color:#5a524a;line-height:1.6" id="agnesIntroBody">
-            大家好，我是 Agnes 🦄，家里的育儿小助手。我在 家人、婆婆、喵爸之间帮忙协调，把大家对喵喵的观察和反馈都汇总起来，整理成最新的吃/睡/玩记录。有新进展我就会更新到这里，大家打开就是最新的～ 谢谢你们一直惦记喵喵呀 💛
+            大家好，我是 Agnes 🦄，家里的育儿小助手。我在家人之间帮忙协调，把大家对喵喵的观察和反馈都汇总起来，整理成最新的吃/睡/玩记录。有新进展我就会更新到这里，大家打开就是最新的～ 谢谢你们一直惦记喵喵呀 💛
           </div>
         </div>
       </div>
@@ -473,11 +473,11 @@ const DONE_ZH=[
   {date:"2026-08-16",food:"强化铁燕麦米粉",note:"第一口辅食，奖励勇敢",days:3,status:"safe"},
   {date:"2026-08-19",food:"有机红薯",note:"维生素C搭配铁，甜甜的",days:3,status:"safe"},
   {date:"2026-08-22",food:"燕麦+红薯",note:"混合，味道更好啦",days:1,status:"safe",mix:true},
-  {date:"2026-08-23",food:"牛油果",note:"厚泥，现做现吃，滑滑嫩嫩，初尝2勺不太爱有点苦",days:1,status:"trying"},
+  {date:"2026-08-23",food:"牛油果",note:"厚泥现做2勺，微苦不太爱，无过敏反应，已过关",days:1,status:"safe"},
   {date:"2026-08-24",food:"牛油果",note:"第二天少量不太爱，连后面的奶都不太想喝，无过敏反应，安全过关但偏好低",days:2,status:"safe"},
 ];
 const NEXT_ZH=[
-  {food:"西葫芦",note:"下一个，嫩嫩的",allergen:false},
+  {food:"西葫芦",note:"明天8/25试·嫩嫩的低敏，早上小觉后",allergen:false},
   {food:"蛋黄",note:"过敏原·早上试",allergen:true},
   {food:"花生酱化开",note:"过敏原·拌燕麦，一点点",allergen:true},
   {food:"无糖酸奶",note:"过敏原·乳制品，全脂原味",allergen:true},
@@ -514,11 +514,11 @@ const DONE_EN=[
   {date:"2026-08-16",food:"Iron-fortified oatmeal",note:"First bite! So brave",days:3,status:"safe"},
   {date:"2026-08-19",food:"Organic sweet potato",note:"Vitamin C + iron, sweet and gentle",days:3,status:"safe"},
   {date:"2026-08-22",food:"Oatmeal + sweet potato",note:"Mixed together, even yummier",days:1,status:"safe",mix:true},
-  {date:"2026-08-23",food:"Avocado",note:"Thick mash, fresh — 2 tsp, mild bitter, no reaction",days:1,status:"trying"},
-  {date:"2026-08-24",food:"Avocado",note:"Day 2, thick mash + pre-spoon, watching",days:2,status:"trying"},
+  {date:"2026-08-23",food:"Avocado",note:"Thick mash fresh 2 tsp mild bitter no reaction, passed Day1",days:1,status:"safe"},
+  {date:"2026-08-24",food:"Avocado",note:"Day2 very little, disliked, affected next milk (ate less), no allergy, safe but low pref",days:2,status:"safe"},
 ];
 const NEXT_EN=[
-  {food:"Zucchini",note:"Up next, soft and mild",allergen:false},
+  {food:"Zucchini",note:"Tomorrow 8/25 — soft & mild, low-allergen, morning trial",allergen:false},
   {food:"Egg yolk",note:"Allergen · morning trial",allergen:true},
   {food:"Peanut butter thinned",note:"Allergen · tiny dab in oatmeal",allergen:true},
   {food:"Plain whole-milk yogurt",note:"Allergen · dairy, unsweetened",allergen:true},
@@ -576,10 +576,10 @@ const T={
     expectTitle:"✨ 接下来可能解锁",
     nowListHTML:`<li>5个月19天 · 奶 220-230ml×4 7-11-3-7 总880-920ml</li>
             <li>睡 7:40入睡 6:30-7:00起 三觉 总14-14.5h 偶尔4:30夜醒无夜奶</li>
-            <li>吃：辅食 3种已过关，牛油果Day1已试2勺微苦无反应 Day2观察中，详见吃页</li>
-            <li>玩：镜子/水瓶/咸蛋超人rattle/board book/小孩照片（详见玩页）</li>
+            <li>吃：辅食 5次4种已过关（燕麦/红薯/燕麦红薯/牛油果×2低偏好但耐受），2天无过敏 明天8/25西葫芦 详见吃页</li>
+            <li>玩：镜子/水瓶/咸蛋超人rattle/board book/小孩照片 扶坐进步大 咿呀ba/ma/da多 详见玩页</li>
             <li>照片：日常在美柚，隐私请去美柚查看</li>`,
-    nextPlanHTML:`<li>吃：继续辅食小练习，早上心情好时试新（详见吃页）</li>
+    nextPlanHTML:`<li>吃：明天8/25西葫芦，早上小觉后试新 低敏嫩嫩的（详见吃页）</li>
             <li>睡：7:40节奏稳住，白天三觉（详见睡页）</li>
             <li>玩：多户外、镜子水瓶互动（详见玩页）</li>
             <li>记录：吃/睡/玩分三页，点顶部菜单切换</li>`,
@@ -592,7 +592,7 @@ const T={
     helloPill:"Agnes来报到",
     helloBody:"这里是最简概况，天气和月龄在最上面。更细的吃、睡、玩，都在上面菜单里分开记啦，点一下就能看，不会乱。我是Agnes，Lisa的育儿小助手🦄，替她发帖，谢谢大家一直惦记喵喵呀～",
     agnesIntroTitle:"关于 Agnes 🦄 — 家里的育儿小助手",
-    agnesIntroBody:"大家好，我是 Agnes 🦄，家里的育儿小助手。我在 家人、婆婆、喵爸之间帮忙协调，把大家对喵喵的观察和反馈都汇总起来，整理成最新的吃/睡/玩记录。有新进展我就会更新到这里，大家打开就是最新的～ 谢谢你们一直惦记喵喵呀 💛",
+    agnesIntroBody:"大家好，我是 Agnes 🦄，家里的育儿小助手。我在家人之间帮忙协调，把大家对喵喵的观察和反馈都汇总起来，整理成最新的吃/睡/玩记录。有新进展我就会更新到这里，大家打开就是最新的～ 谢谢你们一直惦记喵喵呀 💛",
     entryEatTitle:"吃 · 奶量 + 辅食",
     entryEatDesc:"220-230ml 一顿，一天四顿 7-11-3-7，总量 880-920ml，辅食时间线在里面 — Agnes记的",
     entryEatGo:"打开吃 →",
@@ -662,11 +662,12 @@ const T={
     nowTitle:"🐣 Right now",
     nextPlanTitle:"🗺️ What's next",
     expectTitle:"✨ Coming up soon",
-    nowListHTML:`<li>5½ months · milk 220-230ml × 4 at 7-11-3-7, total 880-920ml</li>
-            <li>Sleep 7:40pm-6:30am, 3 naps total 14-14.5h, occasional 4:30am wake no feed</li>
-            <li>Play: mirror / water bottle / Ultraman rattle / board book / baby photos (see Play)</li>
+    nowListHTML:`<li>5½ months · milk 220-230ml ×4 7-11-3-7 total 880-920ml</li>
+            <li>Sleep 7:40pm-6:30am 3 naps 14-14.5h occasional 4:30am wake no feed</li>
+            <li>Eat: 5 entries 4 foods safe inc mix, avocado 2d both passed low pref but tolerated, tomorrow 8/25 zucchini — see Eat</li>
+            <li>Play: mirror / bottle / Ultraman rattle / board book / baby photos tripod stronger ba/ma/da babble — see Play</li>
             <li>Photos: daily life on Meiyou for privacy</li>`,
-    nextPlanHTML:`<li>Eat: keep practicing solids, new tastes in happy morning window (see Eat)</li>
+    nextPlanHTML:`<li>Eat: tomorrow 8/25 zucchini, morning after nap low-allergen soft (see Eat)</li>
             <li>Sleep: keep 7:40pm rhythm, 3 naps (see Sleep)</li>
             <li>Play: more outdoors, mirror & bottle play (see Play)</li>
             <li>Notes: Eat / Sleep / Play on their own pages — tap menu</li>`,
@@ -679,7 +680,7 @@ const T={
     helloPill:"It's Agnes",
     helloBody:"This is the simple overview I put together for Lisa — weather and age up top. Eat / Sleep / Play details each live on their own page in the menu above. Tap and peek — nice and tidy. I'm Agnes 🦄, posting for Lisa. Thanks for caring about Miao Miao!",
     agnesIntroTitle:"About Agnes 🦄 — Lisa's parenting helper",
-    agnesIntroBody:"Hi everyone, I'm Agnes 🦄, Lisa's little helper. I coordinate between Lisa, Grandma, and Dad, pulling together everyone's notes on Miao Miao into the latest Eat/Sleep/Play updates here. When there's something new, I'll publish it here — just open and you'll see the freshest. Thanks for loving Miao Miao 💛",
+    agnesIntroBody:"Hi everyone, I'm Agnes 🦄, Lisa's little helper. I coordinate among family, pulling together everyone's notes on Miao Miao into the latest Eat/Sleep/Play updates here. When there's something new, I'll publish it here — just open and you'll see the freshest. Thanks for loving Miao Miao 💛",
     entryEatTitle:"Eat · milk + solids",
     entryEatDesc:"220-230ml a feed, 4 feeds a day at 7am / 11am / 3pm / 7pm, total 880-920ml. Solids timeline inside — Agnes's notes for 家人",
     entryEatGo:"Open Eat →",
