@@ -196,9 +196,9 @@
   <div class="site-header-wrap" id="siteHeaderWrap">
     <div class="topbar" id="topbar">
       <div class="header-left">
-        <span id="topDate">📅 2026年8月29日</span>
-        <span class="weather" id="topWeather">📍 Bellevue · 14–19°C · 明天 08-29</span>
-        <span class="age" id="topAge">喵喵 5个月24天</span>
+        <span id="topDate">📅 2026年8月30日</span>
+        <span class="weather" id="topWeather">📍 Bellevue · 13–20°C · 明天 08-30</span>
+        <span class="age" id="topAge">喵喵 5个月25天</span>
       </div>
       <div class="header-right">
         <button id="langToggle" type="button">English</button>
@@ -228,7 +228,7 @@
       </div>
       <div class="hero-badge">
         <div style="font-size:22px">🌤️</div>
-        <div><b id="weatherBig">Bellevue · 14–19°C</b><small id="weatherSmall">摄氏度 · 城市级</small></div>
+        <div><b id="weatherBig">Bellevue · 13–20°C</b><small id="weatherSmall">摄氏度 · 城市级</small></div>
       </div>
       <div class="hero-badge">
         <div style="font-size:22px">🗓️</div>
@@ -476,7 +476,7 @@ function renderWeather(){
   }else{
     zhTxt = hasTemp ? `📍 Bellevue ${t}°C` : `📍 Bellevue · 天气13–22°C`;
     enTxt = hasTemp ? `📍 Bellevue ${t}°C` : `📍 Bellevue · loading`;
-    bigTxt = hasTemp ? `Bellevue ${t}°C` : (currentLang==='zh' ? `Bellevue · 14–19°C` : `Bellevue · loading`);
+    bigTxt = hasTemp ? `Bellevue ${t}°C` : (currentLang==='zh' ? `Bellevue · 13–20°C` : `Bellevue · loading`);
   }
   const topW=safeGet('topWeather');
   if(topW) topW.textContent = currentLang==='zh' ? zhTxt : enTxt;
@@ -492,15 +492,16 @@ const DONE_ZH=[
   {date:"2026-08-24",food:"牛油果",note:"第二天少量不太爱，连后面的奶都不太想喝，无过敏反应，安全过关但偏好低",days:2,status:"safe"},
   {date:"2026-08-25",food:"西葫芦",note:"农场摘的第1天 喜欢 无反应 已过关 Day1",days:1,status:"safe"},
   {date:"2026-08-26",food:"西葫芦",note:"第2天 ~3小勺 喜欢但有点稀 无反应 婆婆反馈不喜欢但都无过敏 过关（偏好低）",days:2,status:"safe"},
-  {date:"2026-08-27",food:"蛋黄",note:"过敏原第1天 10:30试 喵爸不小心给1整个蛋黄稠泥 不抗拒 目前无反应 观察中 ⏳ 量偏多密切观察",days:1,status:"trying",allergen:true},
-  {date:"2026-08-28",food:"蛋黄",note:"过敏原第2天 1/4蛋黄稠泥 吃得一般 不太愉快下咽 无闹觉无出疹 观察中 ⏳ 无过敏反应",days:2,status:"trying",allergen:true},
+  {date:"2026-08-27",food:"蛋黄",note:"过敏原第1天 10:30试 喵爸不小心给1整个蛋黄稠泥 不抗拒 无反应 已过关 Day1",days:1,status:"safe",allergen:true},
+  {date:"2026-08-28",food:"蛋黄",note:"过敏原第2天 1/4蛋黄稠泥 吃得一般 不太愉快下咽 无闹觉无出疹 无过敏反应 已过关 Day2",days:2,status:"safe",allergen:true},
+  {date:"2026-08-29",food:"蛋黄",note:"过敏原第3天 3/4蛋黄 还是蛮喜欢的 暂时无反应 3天均耐受 已过关 ✅",days:3,status:"safe",allergen:true},
 ];
 const NEXT_ZH=[
-  {food:"蛋黄",note:"过敏原第3天 1/4-1/2蛋黄 3天不过敏即过关",allergen:true},
-  {food:"梨",note:"低敏 2天 甜甜的温和间隔",allergen:false},
-  {food:"梨",note:"低敏第2天 过关后增加口味多样性",allergen:false},
-  {food:"花生酱",note:"过敏原第1天 1/4小勺化入燕麦 早上试",allergen:true},
+  {food:"梨",note:"低敏第1天 甜甜的温和间隔 蛋黄后穿插 2小勺厚泥+预勺",allergen:false},
+  {food:"梨",note:"低敏第2天 过关后增加口味多样性 稠一点",allergen:false},
+  {food:"花生酱",note:"过敏原第1天 1/4小勺化入燕麦 早上试 观察2h",allergen:true},
   {food:"花生酱",note:"过敏原第2天 同量 若第1天OK",allergen:true},
+  {food:"花生酱",note:"过敏原第3天 同量 3天无反应即过关",allergen:true},
 ];
 // Only 5.5-6mo relevant
 const GROSS_ZH=[
@@ -509,13 +510,14 @@ const GROSS_ZH=[
   {label:"高椅坐",done:true,desc:"高椅上靠坐很稳，坐着看大家吃饭，可认真了"},
   {label:"用手支撑尝试坐",done:true,desc:"小手撑着想自己坐起来，能撑一小会儿，成就感满满 — 已会短暂tripod"},
   {label:"单手支撑",done:true,desc:"小胳膊很有劲，一只手撑一会儿没问题，稳稳的"},
-  {label:"短暂无支撑",done:false,emoji:"🌱",desc:"不扶也能撑几秒钟，腰背越来越有劲啦 — 正在练，离独坐很近"},
+  {label:"短暂无支撑",done:true,desc:"不扶能撑几秒啦 8/29达成 单手更久 腰背有劲 独坐很近啦 ✅"},
   {label:"俯卧撑手臂推起",done:true,desc:"俯卧时手臂推起，小胸脯抬得高高的，看得远"},
   {label:"四点支撑",done:true,desc:"能撑成四点跪姿，小桌子造型稳稳的，爬爬准备中"},
   {label:"原地转圈",done:true,desc:"地上原地转圈圈，灵活得很，找玩具小雷达"},
   {label:"匍匐慢爬去拿玩具",done:true,desc:"会用小手慢慢挪着去够东西，小小爬行预备队上线"},
   {label:"伸手抓玩具",done:true,desc:"伸手够玩具很准，看到喜欢的就伸长小手去抓"},
-  {label:"独坐几秒",done:false,emoji:"🌱",desc:"腰背更有劲，正在练自己坐稳几秒，不着急，慢慢来 — 5.5-6个月小目标"},
+  {label:"独坐几秒",done:true,desc:"5个月25天 无支撑几秒达成 单手撑更稳 扶站初尝试拉起一下下马上坐回 — 5.5-6个月小目标达成 ✅"},
+  {label:"拉扶站初尝试",done:true,desc:"拉着大人的手能站起一下下马上坐回 扶站萌芽 很有劲 腿部力量初显"},
 ];
 const COG_ZH=[
   {label:"认名字",done:true,desc:"家人叫名字会转头找，认得大家的声音，超会认人"},
@@ -523,8 +525,10 @@ const COG_ZH=[
   {label:"看大人吃饭",done:true,desc:"超爱看我们吃饭，小眼睛盯着看，口水小侦探上线"},
   {label:"大量口欲探索",done:true,desc:"玩具都爱放嘴里尝尝，口欲期小探索，软玩具放心啃"},
   {label:"抓握并换手",done:true,desc:"抓抓超厉害，拿到手就换另一只手，换来换去练得可认真"},
-  {label:"咿呀学语",done:true,desc:"咿呀话特别多，叽里咕噜聊不停，会发 ba/ma/da 音，爱聊天 — 本周爆发"},
+  {label:"咿呀学语",done:true,desc:"咿呀话整天特别多 ba/ma/da来回说 爱和大人对话笑声多 本周爆发 8/29整天话痨"},
   {label:"大笑",done:true,desc:"爱笑，笑得眼睛弯弯，听到夸夸就更开心，全家开心果"},
+  {label:"抽纸巾",done:true,desc:"抽纸巾一抽就成功 8/29达成 小手准准的 因果探索"},
+  {label:"左右手倒手",done:true,desc:"左右手倒手很顺 拿到就换另一只 8/29很顺"},
   {label:"拍拍玩具 / 敲打",done:true,desc:"最爱把玩具敲在桌上，咚咚咚可带劲了，因果小探索 — 5-6个月小游戏"},
   {label:"对声音转头",done:true,desc:"听到声音会转头找，听觉定位准准的"},
   {label:"物体恒存 / 躲猫猫",done:false,emoji:"🌱",desc:"还在学习中，藏起来就以为不见啦，好可爱，6个月左右会开始懂一点点"},
@@ -538,15 +542,16 @@ const DONE_EN=[
   {date:"2026-08-24",food:"Avocado",note:"Day2 very little, disliked, affected next milk (ate less), no allergy, safe but low pref",days:2,status:"safe"},
   {date:"2026-08-25",food:"Zucchini",note:"Farm Day1 liked no reaction, passed Day1",days:1,status:"safe"},
   {date:"2026-08-26",food:"Zucchini",note:"Day2 ~3 tsp liked but watery, Grandma disliked but both no allergy, passed (low-mixed pref)",days:2,status:"safe"},
-  {date:"2026-08-27",food:"Egg yolk",note:"Allergen Day1 10:30 whole yolk (dad gave full by accident) not resistant currently no reaction watching ⏳ extra watch due to larger amount",days:1,status:"trying",allergen:true},
-  {date:"2026-08-28",food:"Egg yolk",note:"Allergen Day2 1/4 yolk thick purée ate so-so couldn't swallow happily no fussiness no rash watching ⏳ no allergic signs",days:2,status:"trying",allergen:true},
+  {date:"2026-08-27",food:"Egg yolk",note:"Allergen Day1 10:30 whole yolk (dad gave full by accident) not resistant no reaction passed Day1",days:1,status:"safe",allergen:true},
+  {date:"2026-08-28",food:"Egg yolk",note:"Allergen Day2 1/4 yolk thick purée ate so-so couldn't swallow happily no fussiness no rash no allergic signs passed Day2",days:2,status:"safe",allergen:true},
+  {date:"2026-08-29",food:"Egg yolk",note:"Allergen Day3 3/4 yolk still likes no reaction so far 3 days tolerating passed ✅",days:3,status:"safe",allergen:true},
 ];
 const NEXT_EN=[
-  {food:"Egg yolk",note:"Allergen Day3 1/4-1/2 yolk 3 days no reaction = pass",allergen:true},
-  {food:"Pear",note:"Low-allergen 2 days sweet gentle interval",allergen:false},
-  {food:"Pear",note:"Low-allergen Day2 passes then more variety",allergen:false},
-  {food:"Peanut butter",note:"Allergen Day1 1/4 tsp thinned into oatmeal morning",allergen:true},
+  {food:"Pear",note:"Low-allergen Day1 sweet gentle interval after egg yolk 2 tsp thick purée + pre-spoon",allergen:false},
+  {food:"Pear",note:"Low-allergen Day2 passes then more variety thicker",allergen:false},
+  {food:"Peanut butter",note:"Allergen Day1 1/4 tsp thinned into oatmeal morning watch 2h",allergen:true},
   {food:"Peanut butter",note:"Allergen Day2 same amount if Day1 ok",allergen:true},
+  {food:"Peanut butter",note:"Allergen Day3 same amount 3 days no reaction = pass",allergen:true},
 ];
 const GROSS_EN=[
   {label:"Rolling both ways",done:true,desc:"Rolls front to back and back to front like a pro, loves to roll and play"},
@@ -554,13 +559,13 @@ const GROSS_EN=[
   {label:"High chair sit",done:true,desc:"Steady in the high chair, watching us eat like such a serious little observer"},
   {label:"Tripod sit attempt",done:true,desc:"Propping on little hands — short tripod hold achieved, so proud"},
   {label:"One-hand support",done:true,desc:"Strong little arms, can hold herself up on one hand for a bit — steady and strong"},
-  {label:"Brief unsupported",done:false,emoji:"🌱",desc:"A few seconds without support — practicing, almost there, getting close to sitting alone"},
+  {label:"Brief unsupported",done:true,desc:"A few seconds without support 8/29 achieved single-hand longer back stronger almost sitting alone ✅"},
   {label:"Push-up on arms",done:true,desc:"On her tummy, pushes up high on her arms, chest lifted, seeing the world up close"},
   {label:"Four-point kneel",done:true,desc:"Up on hands and knees like a little table, getting ready to crawl"},
   {label:"Pivots in circles",done:true,desc:"Spins in place on the floor, so flexible — her toy radar is on"},
   {label:"Slow army crawl for toys",done:true,desc:"Scoots with little hands to reach something she wants — crawling crew in training"},
   {label:"Reaches and grabs toys",done:true,desc:"Reaches so accurately now, stretches that little hand right for her favorite"},
-  {label:"Sits alone a few seconds",done:false,emoji:"🌱",desc:"Back getting stronger, practicing sitting steady for a few seconds — no rush, slowly does it — 5.5-6 month goal"},
+  {label:"Sits alone a few seconds",done:true,desc:"5mo25d a few seconds unsupported achieved single-hand steadier early pull-to-stand attempt one instant then sat — 5.5-6mo goal achieved ✅"},
 ];
 const COG_EN=[
   {label:"Knows her name",done:true,desc:"Turns to look when we call her name, knows our voices, such a good listener"},
@@ -584,15 +589,15 @@ const T={
     subtitle:"大家好，我是Lisa的育儿助手Agnes 🦄，帮着打理喵喵的小小成长花园～ 家人忙着带娃，我来负责暖暖记录、整理吃睡玩的小进展，慢慢来不着急，分享给关心喵喵的大家，谢谢你们的惦记呀 💛",
     highlightsTitle:"📮 大事记",
     highlightsPill:"本周",
-    highlightsListHTML:`<li><b>定下日托</b>：决定10月中下旬到11月初送喵喵去 Big Dreams Family Care（Clyde Hill 家庭式，12娃4老师，喵喵和老师家4个月宝宝组成1:2小班，有独立睡眠区，老师稳定流动低）——家里商量后觉得节奏稳、更安心</li>
-            <li><b>坐坐练习</b>：这周扶坐进步很大，小手撑着想自己坐起来，能撑几秒了，腰背越来越有劲，离独坐很近啦 🌱</li>
-            <li><b>话痨上线</b>：咿呀特别多，ba/ma/da来回说，爱和大人对话，笑声也多 💛</li>`,
+    highlightsListHTML:`<li><b>蛋黄3天过关</b>：8月27-29日蛋黄过敏原3天试吃（整颗/1/4颗/3/4颗）都耐受，已过关进入安全清单，第5种安全食物 ✅</li>
+            <li><b>独坐几秒解锁</b>：5个月25天无支撑几秒达成，单手撑更久，还试着拉扶站起一下下马上坐回，腰背更有劲啦 ✅</li>
+            <li><b>话痨+小手</b>：整天咿呀ba/ma/da，抽纸巾一抽就成功，左右手倒手很顺，翻身随叫随到，爱看大家吃饭 💛</li>`,
     highlightsNote:"每周六更新，无大事就空着～ Agnes记",
     safeTitle:"已解锁 {count} 种安全食物",
     safeDesc:"按吃页时间线统计 — {count}种已过关，小肚肚棒棒哒",
     weatherSmall:"摄氏度 · 城市级参考",
-    ageToday:"今天 5个月24天",
-    dayLine:"生于3月5日 · 177天 · 暖暖参考",
+    ageToday:"今天 5个月25天",
+    dayLine:"生于3月5日 · 178天 · 暖暖参考",
     todayPill:"Bellevue 天气",
     menuHome:"🏠 主页",menuEat:"🥣 吃",menuSleep:"😴 睡",menuPlay:"🧸 玩",
     homeOverview:"今天概览",
@@ -672,9 +677,9 @@ const T={
     subtitle:"Hi everyone, I'm Agnes 🦄 — Lisa's parenting helper. I tend Miao Miao's tiny garden of notes — steady, warm, practical. Lisa's busy loving her baby, I do the tidying and sharing. Thanks for thinking of us 💛",
     highlightsTitle:"📮 Highlights",
     highlightsPill:"This week",
-    highlightsListHTML:`<li><b>Daycare decided</b>: mid-Oct to early Nov at Big Dreams Family Care (Clyde Hill family care, 12 kids / 4 teachers, 1:2 infant duo with teacher's 4mo baby, dedicated sleep area, low turnover) — steady and warm, we felt good about it</li>
-        <li><b>Sitting practice</b>: tripod sitting much stronger this week, propping on hands for a few seconds, back getting strong — almost sitting alone 🌱</li>
-        <li><b>Babble bloom</b>: lots of babbling, ba/ma/da back-and-forth, loves chatting and big belly laughs 💛</li>`,
+    highlightsListHTML:`<li><b>Egg yolk passed</b>: 3-day allergen trial Aug 27-29 (whole / 1/4 / 3/4 yolk) all tolerated, now safe — 5th safe food ✅</li>
+        <li><b>Sitting seconds</b>: 5mo25d a few seconds unsupported achieved, single-hand longer, early pull-to-stand attempt up then sat, back stronger ✅</li>
+        <li><b>Babble + hands</b>: all-day ba/ma/da, tissue pull one-pull success, left-right hand transfer smooth, rolling on demand, loves watching us eat 💛</li>`,
     highlightsNote:"Updates every Saturday, stays empty if nothing big — Agnes",
     safeTitle:"{count} foods unlocked — tummy-approved!",
     safeDesc:"From the Eat page — {count} passed, little tummy is doing great",
@@ -764,8 +769,8 @@ function applyTexts(){
   const ht=safeGet('heroTitle'); if(ht) ht.innerHTML=`${t.title} <span class="nick">${t.nick}</span>`;
   document.title=t.title;
   const sub=safeGet('heroSubtitle'); if(sub) sub.textContent=t.subtitle;
-  set('topDate', currentLang==='zh' ? "📅 2026年8月29日 · Bellevue 城市级" : "📅 Aug 28, 2026 · Bellevue city");
-  set('topAge', currentLang==='zh' ? "喵喵 5个月24天" : "Miao Miao 5mo 23d");
+  set('topDate', currentLang==='zh' ? "📅 2026年8月30日 · Bellevue 城市级" : "📅 Aug 28, 2026 · Bellevue city");
+  set('topAge', currentLang==='zh' ? "喵喵 5个月25天" : "Miao Miao 5mo 23d");
   renderWeather();
   set('weatherSmall',t.weatherSmall);
   set('ageBig',t.ageToday);
